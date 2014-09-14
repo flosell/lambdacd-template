@@ -1,12 +1,10 @@
 # lambdacd
 
-A Leiningen template for FIXME.
+A Leiningen template for LambdaCD.
 
 ## Usage
 
-FIXME
-
-## License
+* `lein new lambdacd <NAME>` 
 
 ## License
 
