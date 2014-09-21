@@ -13,4 +13,4 @@
   (shell/bash "/" "echo bar"))
 
 (defn some-failing-step [& _]
-  (shell/bash "/" "echo 'i am going to fail now...'" "exit 1"))
+  (shell/bash "/" "echo \"i am going to fail now...\"" "exit 1"))
