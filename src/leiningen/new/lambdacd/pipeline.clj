@@ -1,12 +1,13 @@
 (ns {{name}}.pipeline
   (:require [lambdacd.server :as server])
   (:use [lambdacd.execution]
+        [lambdacd.core]
         [lambdacd.control-flow]
         [{{name}}.steps]))
 
 
 
-(def pipeline
+(def pipeline-def
   `(
     lambdacd.manualtrigger/wait-for-manual-trigger
     some-step-that-does-nothing
@@ -17,6 +18,7 @@
     some-failing-step
   ))
 
+(def pipeline (mk-pipeline pipeline-def))
 
-(def app (server/ui-for pipeline))
-(defn start-pipeline-thread [] (server/start-pipeline-thread pipeline))
+(def app (:ring-handler pipeline))
+(def start-pipeline-thread (:init pipeline))
