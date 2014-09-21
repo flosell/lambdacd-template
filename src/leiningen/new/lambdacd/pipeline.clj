@@ -1,5 +1,4 @@
 (ns {{name}}.pipeline
-  (:require [lambdacd.server :as server])
   (:use [lambdacd.execution]
         [lambdacd.core]
         [lambdacd.control-flow]
