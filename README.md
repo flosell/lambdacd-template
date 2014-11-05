@@ -1,6 +1,6 @@
 # lambdacd
 
-A Leiningen template for LambdaCD.
+A Leiningen template for [LambdaCD](https://github.com/flosell/lambdacd).
 
 ## Usage
 
