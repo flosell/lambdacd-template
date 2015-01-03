@@ -1,8 +1,5 @@
 (ns {{name}}.steps
-  (:require [lambdacd.shell :as shell]
-            [lambdacd.execution :as execution]
-            [lambdacd.git :as git]
-            [lambdacd.manualtrigger :as manualtrigger]))
+  (:require [lambdacd.shell :as shell]))
 
 (defn some-step-that-does-nothing [& _]
   {:status :success})
