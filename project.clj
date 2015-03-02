@@ -1,4 +1,4 @@
-(defproject lambdacd/lein-template "0.1.0-alpha8"
+(defproject lambdacd/lein-template "0.1.0-alpha9"
   :description "leiningen template for lambdacd"
   :url "http://github.com/flosell/lambdacd-template"
   :license {:name "Apache License, version 2.0"
