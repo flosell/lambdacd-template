@@ -1,5 +1,5 @@
 (ns {{name}}.steps
-  (:require [lambdacd.shell :as shell]))
+  (:require [lambdacd.steps.shell :as shell]))
 
 (defn some-step-that-does-nothing [& _]
   {:status :success})

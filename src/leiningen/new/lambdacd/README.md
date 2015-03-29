@@ -4,7 +4,7 @@ A continuous delivery pipeline for FIXME
 
 ## Usage
 
-* `lein ring server` will start your pipeline and open a browser with the UI
+* `lein run` will start your pipeline with a web-ui listening on port 8080
 
 ## Files
 
