@@ -6,7 +6,8 @@
   (:require
         [lambdacd.util :as util]
         [lambdacd.core :as lambdacd]
-        [clojure.tools.logging :as log]))
+        [clojure.tools.logging :as log])
+  (:gen-class))
 
 
 
