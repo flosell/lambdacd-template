@@ -2,6 +2,8 @@
   (:use [lambdacd.internal.execution]
         [lambdacd.steps.control-flow]
         [ring.server.standalone :as ring-server]
+        [lambdacd.ui.ui-server :as ui]
+        [lambdacd.runners :as runners]
         [{{name}}.steps])
   (:require
         [lambdacd.util :as util]
@@ -26,10 +28,9 @@
 (defn -main [& args]
       (let [home-dir (util/create-temp-dir)
             config { :home-dir home-dir :dont-wait-for-completion false}
-            pipeline (lambdacd/mk-pipeline pipeline-def config)
-            app (:ring-handler pipeline)
-            start-pipeline-thread (:init pipeline)]
+            pipeline (lambdacd/assemble-pipeline pipeline-def config)
+            app (ui/ui-for pipeline)]
            (log/info "LambdaCD Home Directory is " home-dir)
-           (start-pipeline-thread)
+           (runners/start-one-run-after-another pipeline)
            (ring-server/serve app {:open-browser? false
                                    :port 8080})))
