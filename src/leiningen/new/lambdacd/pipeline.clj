@@ -1,6 +1,5 @@
 (ns {{name}}.pipeline
-  (:use [lambdacd.internal.execution]
-        [lambdacd.steps.control-flow]
+  (:use [lambdacd.steps.control-flow]
         [ring.server.standalone :as ring-server]
         [lambdacd.ui.ui-server :as ui]
         [lambdacd.runners :as runners]
