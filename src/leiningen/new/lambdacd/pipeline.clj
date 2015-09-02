@@ -1,9 +1,9 @@
 (ns {{name}}.pipeline
   (:use [lambdacd.steps.control-flow]
-        [lambdacd.steps.manualtrigger]
         [{{name}}.steps])
   (:require
         [ring.server.standalone :as ring-server]
+        [lambdacd.steps.manualtrigger :as manualtrigger]
         [lambdacd.ui.ui-server :as ui]
         [lambdacd.runners :as runners]
         [lambdacd.util :as util]
@@ -15,12 +15,12 @@
 
 (def pipeline-def
   `(
-    wait-for-manual-trigger
+    manualtrigger/wait-for-manual-trigger
     some-step-that-does-nothing
     (in-parallel
       some-step-that-echos-foo
       some-step-that-echos-bar)
-    wait-for-manual-trigger
+    manualtrigger/wait-for-manual-trigger
     some-failing-step
   ))
 
