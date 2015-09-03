@@ -21,16 +21,22 @@
       some-step-that-echos-foo
       some-step-that-echos-bar)
     manualtrigger/wait-for-manual-trigger
-    some-failing-step
-  ))
+    some-failing-step))
 
 
 (defn -main [& args]
-      (let [home-dir (util/create-temp-dir)
-            config { :home-dir home-dir :dont-wait-for-completion false}
+      (let [;; the home dir is where LambdaCD saves all data.
+            ;; point this to a particular directory to keep builds around after restarting
+            home-dir (util/create-temp-dir)
+            config { :home-dir home-dir }
+            ;; initialize and wire everything together
             pipeline (lambdacd/assemble-pipeline pipeline-def config)
+            ;; create a Ring handler for the UI
             app (ui/ui-for pipeline)]
            (log/info "LambdaCD Home Directory is " home-dir)
+           ;; this starts the pipeline and runs one build after the other.
+           ;; there are other runners and you can define your own as well.
            (runners/start-one-run-after-another pipeline)
+           ;; start the webserver to serve the UI
            (ring-server/serve app {:open-browser? false
                                    :port 8080})))
