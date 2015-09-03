@@ -6,6 +6,7 @@
 
 (defn some-step-that-echos-foo [_ ctx]
   (shell/bash ctx "/" "echo foo"))
+
 (defn some-step-that-echos-bar [_ ctx]
   (shell/bash ctx "/" "echo bar"))
 

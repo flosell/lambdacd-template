@@ -11,6 +11,8 @@ A continuous delivery pipeline for FIXME
 * `pipeline.clj` contains your pipeline-definition
 * `steps.clj` contains your custom build-steps
 
+* `core.clj` contains the `main` function that wires everything together
+
 ## References
 
 * for a more detailed example, look at the [example pipeline](https://github.com/flosell/lambdacd/tree/master/src/todopipeline) in the main LambdaCD project
