@@ -13,7 +13,8 @@
       (let [;; the home dir is where LambdaCD saves all data.
             ;; point this to a particular directory to keep builds around after restarting
             home-dir (util/create-temp-dir)
-            config { :home-dir home-dir }
+            config {:home-dir home-dir
+                    :name "{{pipeline-name}}"}
             ;; initialize and wire everything together
             pipeline (lambdacd/assemble-pipeline pipeline/pipeline-def config)
             ;; create a Ring handler for the UI
