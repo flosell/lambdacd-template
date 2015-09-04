@@ -1,4 +1,4 @@
-(ns {{name}}.steps
+(ns my-first-pipeline.steps
   (:require [lambdacd.steps.shell :as shell]))
 
 (defn some-step-that-does-nothing [args ctx]
