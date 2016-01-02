@@ -8,10 +8,16 @@ A continuous delivery pipeline for FIXME
 
 ## Files
 
-* `pipeline.clj` contains your pipeline-definition
-* `steps.clj` contains your custom build-steps
+* `/`
+    * `project.clj` contains dependencies and build configuration for Leiningen
 
-* `core.clj` contains the `main` function that wires everything together
+* `/src/{{sanitized}}/`
+    * `pipeline.clj` contains your pipeline-definition
+    * `steps.clj` contains your custom build-steps
+    * `core.clj` contains the `main` function that wires everything together
+
+* `/resources/`
+    * `logback.xml` contains a sample log configuration
 
 ## References
 
