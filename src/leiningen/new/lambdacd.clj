@@ -16,6 +16,7 @@
              ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
              ["src/{{sanitized}}/pipeline.clj" (render "pipeline.clj" data)]
              ["src/{{sanitized}}/steps.clj" (render "steps.clj" data)]
+             ["src/{{sanitized}}/ui_selection.clj" (render "ui_selection.clj" data)]
              ["project.clj" (render "project.clj" data)]
              ["README.md" (render "README.md" data)]
              [".gitignore" (render "gitignore" data)]
