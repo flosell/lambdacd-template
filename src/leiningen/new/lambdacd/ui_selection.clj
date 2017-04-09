@@ -21,11 +21,10 @@
        [:li [:a {:href "/reference/"} "Reference UI"]]]]]))
 
 (defn ui-routes [pipeline]
-  (let [app (lambdaui/ui-for pipeline)]
+  (let [lambdaui-app    (lambdaui/ui-for pipeline :contextPath "/lambdaui")
+        referenceui-app (reference-ui/ui-for pipeline)]
     (routes
       (GET "/" [] (ui-selection))
-      (context "/lambdaui" []
-               (lambdaui/ui-for pipeline :contextPath "/lambdaui"))
-      (context "/reference" []
-               (reference-ui/ui-for pipeline)))))
+      (context "/lambdaui"  [] lambdaui-app)
+      (context "/reference" [] referenceui-app))))
 
