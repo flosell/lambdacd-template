@@ -2,7 +2,7 @@
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :dependencies [[lambdacd "0.13.4"]
-                           [lambdaui "0.4.0"]
+                           [lambdaui "0.4.0" :exclusions [lambdacd]] ; exclusion to work around sroidl/lambda-ui#102
                            [http-kit "2.2.0"]
                            [org.clojure/clojure "1.7.0"]
                            [org.clojure/tools.logging "0.3.1"]
