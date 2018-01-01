@@ -4,7 +4,6 @@
     [{{name}}.ui-selection :as ui-selection]
     [org.httpkit.server :as http-kit]
     [lambdacd.runners :as runners]
-    [lambdacd.util :as util]
     [lambdacd.core :as lambdacd]
     [clojure.tools.logging :as log])
   (:import (java.nio.file.attribute FileAttribute)
