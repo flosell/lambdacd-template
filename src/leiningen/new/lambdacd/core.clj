@@ -7,12 +7,17 @@
     [lambdacd.util :as util]
     [lambdacd.core :as lambdacd]
     [clojure.tools.logging :as log])
+  (:import (java.nio.file.attribute FileAttribute)
+    (java.nio.file Files LinkOption))
   (:gen-class))
+
+(defn- create-temp-dir []
+  (str (Files/createTempDirectory "lambdacd" (into-array FileAttribute []))))
 
 (defn -main [& args]
   (let [;; the home dir is where LambdaCD saves all data.
         ;; point this to a particular directory to keep builds around after restarting
-        home-dir (util/create-temp-dir)
+        home-dir (create-temp-dir)
         config   {:home-dir home-dir
                   :name     "{{pipeline-name}}"}
         ;; initialize and wire everything together
