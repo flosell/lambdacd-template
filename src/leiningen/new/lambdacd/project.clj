@@ -1,7 +1,7 @@
 (defproject {{name}} "0.1.0-SNAPSHOT"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
-            :dependencies [[lambdacd "0.14.0"]
+            :dependencies [[lambdacd "0.14.4"]
                            [lambdaui "1.1.0"]
                            [http-kit "2.3.0"]
                            [org.clojure/clojure "1.9.0"]
